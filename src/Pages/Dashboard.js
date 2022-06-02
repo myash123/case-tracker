@@ -1,9 +1,7 @@
 import * as React from 'react';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
@@ -13,11 +11,7 @@ import Tickets from '../Components/Tickets';
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+function Dashboard() {
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -37,7 +31,7 @@ function DashboardContent() {
                 >
                 </Paper>
               </Grid>
-              {/* Recent Deposits */}
+              {/* Performer */}
               <Grid item xs={12} md={4} lg={3}>
                 <Paper
                   sx={{
@@ -63,6 +57,4 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
-}
+export default Dashboard

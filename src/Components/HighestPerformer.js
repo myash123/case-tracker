@@ -9,7 +9,7 @@ function preventDefault(event) {
 
 export default function HighestPerformer() {
   return (
-    <React.Fragment>
+    <>
       <Title>Highest Performer</Title>
       <Typography component="p" variant="h4">
         15 
@@ -22,6 +22,6 @@ export default function HighestPerformer() {
           View User
         </Link>
       </div>
-    </React.Fragment>
+    </>
   );
 }

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Routes, Route } from "react-router-dom";
+
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -17,6 +19,14 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './Components/listitems';
 
 import Dashboard from './Pages/Dashboard'
+import ManageProjects from './Pages/ManageProjects'
+import ManageUsers from './Pages/ManageUsers'
+
+import ReportsView from './Pages/ReportsView'
+import ProjectsView from './Pages/ProjectsView'
+import TicketsView from './Pages/TicketsView'
+import CreateTicket from './Pages/CreateTicket'
+import CreateProject from './Pages/CreateProject'
 
 const drawerWidth = 240;
 
@@ -101,7 +111,7 @@ function AppContainer() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              HelpDesk Tracker
+              Issue Tracker
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={1} color="secondary">
@@ -143,7 +153,17 @@ function AppContainer() {
           }}
         >
           <Toolbar />
-          <Dashboard />
+          <Routes>
+            <Route path="/home" element={<Dashboard />} />
+            <Route path="/manage-projects" element={<ManageProjects />} />
+            <Route path="/manage-users" element={<ManageUsers />} />
+            <Route path="/reports" element={<ReportsView />} />
+            <Route path="/projects" element={<ProjectsView />} />
+            <Route path="/tickets" element={<TicketsView />} />
+            <Route path="/create-ticket" element={<CreateTicket />} />
+            <Route path="/create-project" element={<CreateProject />} />
+            
+          </Routes>
         </Box>
       </Box>
     </ThemeProvider>

@@ -8,24 +8,18 @@ import Paper from '@mui/material/Paper';
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-  };
+function ReportsView() {
 
   return (
     <ThemeProvider theme={mdTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            Hello I like to manage products
+            Reports
         </Container>        
       </Box>
     </ThemeProvider>
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
-}
+export default ReportsView
